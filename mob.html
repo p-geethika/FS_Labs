@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Number Validation</title>
+    <script>
+        function validateMobileNumber() {
+            // Get the value of the input field
+            var mobileNumber = document.getElementById("mobileNumber").value;
+
+            // Regular expression to check if the number is exactly 10 digits
+            var mobilePattern = /^[0-9]{10}$/;
+
+            // Check if the number matches the pattern
+            if (mobilePattern.test(mobileNumber)) {
+                alert("Valid mobile number.");
+            } else {
+                alert("Invalid mobile number. Please enter a 10-digit number.");
+            }
+
+            // Prevent form submission for demonstration purposes
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h2>Mobile Number Validation Form</h2>
+    <form onsubmit="return validateMobileNumber()">
+        <label for="mobileNumber">Enter Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber">
+        <input type="submit" value="Check">
+    </form>
+</body>
+</html>
